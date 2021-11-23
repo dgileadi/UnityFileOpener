@@ -6,13 +6,11 @@ static OpenInPlace *openInPlace;
 
 UIDocumentInteractionController* dic = nil;
 
-- (BOOL) openInPlace:(NSString *)url uti:(NSString *)uti name:(NSString *)name {
+- (BOOL) openInPlace:(NSString *)url uti:(NSString *)uti {
     dic = [UIDocumentInteractionController interactionControllerWithURL:[NSURL URLWithString:url]];
     dic.delegate = self;
     if (uti != nil)
         dic.UTI = uti;
-    if (name != nil)
-        dic.name = name;
     return [dic presentOpenInMenuFromRect:CGRectZero inView:UnityGetGLView() animated:YES];
 }
 
@@ -23,9 +21,9 @@ UIDocumentInteractionController* dic = nil;
 }
 
 extern "C" {
-    void UFO_OpenInPlace(char* url, char* uti, char* name) {
+    void UFO_OpenInPlace(char* url, char* uti) {
         openInPlace = [[OpenInPlace alloc] init];
-        [openInPlace openInPlace:[DataConvertor charToNSString:url] uti:[DataConvertor charToNSString:uti] name:[DataConvertor charToNSString:name]];
+        [openInPlace openInPlace:[DataConvertor charToNSString:url] uti:[DataConvertor charToNSString:uti]];
     }
 }
 

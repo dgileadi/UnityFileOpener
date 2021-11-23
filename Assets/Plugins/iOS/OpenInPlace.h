@@ -3,6 +3,6 @@
 
 @interface OpenInPlace : NSObject <UIDocumentInteractionControllerDelegate>
 
-- (BOOL) openInPlace:(NSString *)url uti:(NSString *)uti name:(NSString *)name;
+- (BOOL) openInPlace:(NSString *)url uti:(NSString *)uti;
 
 @end

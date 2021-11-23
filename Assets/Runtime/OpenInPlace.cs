@@ -7,7 +7,7 @@ namespace OpenInPlace
 {
     public class FileOpener
     {
-        public static bool OpenInPlace(string path, string uti = null, string name = null)
+        public static bool OpenInPlace(string path, string type = null)
         {
             // if relative, make absolute
             if (!Path.IsPathRooted(path))
@@ -18,7 +18,7 @@ namespace OpenInPlace
             Uri fileUri = new Uri(new Uri("file://"), path);
 
 #if UNITY_IOS && !UNITY_EDITOR
-            return NativeOpenInPlace(fileUri.AbsoluteUri, uti, name);
+            return NativeOpenInPlace(fileUri.AbsoluteUri, type);
 #elif UNITY_ANDROID
 // TODO:
 #elif UNITY_EDITOR
@@ -36,7 +36,7 @@ namespace OpenInPlace
 
 #if UNITY_IOS && !UNITY_EDITOR
         [DllImport("__Internal", EntryPoint="UFO_OpenInPlace")]
-        static extern bool NativeOpenInPlace(string url, string uti, string name);
+        static extern bool NativeOpenInPlace(string url, string uti);
 #endif
     }
 }
