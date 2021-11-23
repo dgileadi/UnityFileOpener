@@ -13,6 +13,8 @@ There is one optional parameter: `type` allows you to specify the file type if i
 ```c#
 using OpenInPlace;
 
+..
+
 FileOpener.OpenInPlace(fileName);
 ```
 
@@ -20,7 +22,7 @@ FileOpener.OpenInPlace(fileName);
 
 ### iOS
 
-On iOS this is done by setting the `UIFileSharingEnabled` and `LSSupportsOpeningDocumentsInPlace` entries in your Info.plist file to `true` (see [this note for why](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW20)). The Info.plist file is modified for you by BuildPostProcessor.cs in this package.
+On iOS it works by setting the `UIFileSharingEnabled` and `LSSupportsOpeningDocumentsInPlace` entries in your Info.plist file to `true` (see [this note for why](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW20)). The Info.plist file is modified for you by BuildPostProcessor.cs in this package.
 
 The `OpenInPlace` method then uses [UIDocumentInteractionController](https://developer.apple.com/documentation/uikit/uidocumentinteractioncontroller) to share the document.
 
