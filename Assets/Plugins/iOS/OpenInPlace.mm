@@ -20,10 +20,18 @@ UIDocumentInteractionController* dic = nil;
     [dic dismissMenuAnimated:NO];
 }
 
++(NSString *) charToNSString:(char *)value {
+    if (value != NULL) {
+        return [NSString stringWithUTF8String: value];
+    } else {
+        return nil;
+    }
+}
+
 extern "C" {
     void UFO_OpenInPlace(char* url, char* uti) {
         openInPlace = [[OpenInPlace alloc] init];
-        [openInPlace openInPlace:[DataConvertor charToNSString:url] uti:[DataConvertor charToNSString:uti]];
+        [openInPlace openInPlace:[OpenInPlace charToNSString:url] uti:[OpenInPlace charToNSString:uti]];
     }
 }
 
