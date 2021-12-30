@@ -1,6 +1,6 @@
 {
     "name": "com.gileadi.unity-file-opener",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "displayName": "Open Files In Place",
     "description": "Allows opening files in place on iOS and Android",
     "unity": "2019.1",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.5
+
+- Add assembly definition for the editor package.
+
 ## 0.0.4
 
 - Simplify plugin code by removing DataConvertor class.
