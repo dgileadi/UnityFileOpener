@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.6
+
+- Change assembly definition for the editor package to be just for the Editor.
+
 ## 0.0.5
 
 - Add assembly definition for the editor package.
